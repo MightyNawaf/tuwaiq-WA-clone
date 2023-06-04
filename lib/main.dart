@@ -1,50 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/components/app_bar.dart';
-import 'package:whatsapp_clone/components/chat_card.dart';
+import 'package:whatsapp_clone/data.dart';
 
 void main() {
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
   @override
+  State<MainApp> createState() => MainAppState();
+}
+
+class MainAppState extends State<MainApp> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: customAppBar,
-        body: SafeArea(
-          bottom: false,
-          child: ListView(
-            children: const [
-              ChatCard(
-                latestMessage: 'يخوي رد علينا',
-                name: 'فهد',
-                time: '10:00',
-                unreadMessagesCount: 1000,
-              ),
-              ChatCard(
-                latestMessage: 'يخوي رد علينا',
-                name: 'وليد',
-                time: '4:00',
-                unreadMessagesCount: 3,
-              ),
-              ChatCard(
-                latestMessage: 'يخوي رد علينا',
-                name: 'فهد',
-                time: '10:00',
-                unreadMessagesCount: 1000,
-              ),
-              ChatCard(
-                latestMessage: 'يخوي رد علينا',
-                name: 'فهد',
-                time: '10:00',
-                unreadMessagesCount: 1000,
-              ),
-            ],
-          ),
+      home: ChatPage(),
+    );
+  }
+}
+
+class ChatPage extends StatefulWidget {
+  const ChatPage({super.key});
+
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: customAppBar(
+        context,
+        onPushDone: () {
+          setState(() {});
+        },
+      ),
+      body: SafeArea(
+        bottom: false,
+        child: ListView(
+          children: [
+            ...Data.cards,
+          ],
         ),
       ),
     );

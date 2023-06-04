@@ -9,6 +9,7 @@ class ChatCard extends StatelessWidget {
     required this.latestMessage,
     required this.unreadMessagesCount,
     this.imageUrl,
+    this.showDivider = true,
   });
 
   final String? imageUrl;
@@ -16,6 +17,7 @@ class ChatCard extends StatelessWidget {
   final String latestMessage;
   final String time;
   final int unreadMessagesCount;
+  final bool showDivider;
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +76,12 @@ class ChatCard extends StatelessWidget {
             ],
           ),
         ),
-        Divider(
-          thickness: 1,
-          indent: MediaQuery.of(context).size.width * 0.2,
+        Visibility(
+          visible: showDivider,
+          child: Divider(
+            thickness: 1,
+            indent: MediaQuery.of(context).size.width * 0.2,
+          ),
         )
       ],
     );
