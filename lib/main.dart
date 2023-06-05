@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/components/app_bar.dart';
 import 'package:whatsapp_clone/data.dart';
+import 'package:whatsapp_clone/extensions/context.dart';
+import 'package:whatsapp_clone/pages/chat_details_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -45,7 +47,12 @@ class _ChatPageState extends State<ChatPage> {
         child: ListView.separated(
           itemCount: Data.cards.length,
           itemBuilder: (BuildContext context, int index) {
-            return Data.cards[index];
+            return GestureDetector(
+              onTap: () {
+                context.pushPage(ChatDetailsPage(chat: Data.cards[index].chat));
+              },
+              child: Data.cards[index],
+            );
           },
           separatorBuilder: (BuildContext context, int index) {
             return const Divider(
