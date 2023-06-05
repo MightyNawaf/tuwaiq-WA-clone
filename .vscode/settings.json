@@ -1,5 +1,5 @@
 {
-    "files.exclude": {
+	"files.exclude": {
 		"**/**.lock": true,
 		"**/.dart_tool": true,
 		"**/.flutter-plugins": true,
@@ -22,4 +22,5 @@
 		"**/windows": true,
 		"**/linux": true
 	},
+	"cSpell.words": ["Fahad"]
 }

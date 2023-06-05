@@ -1,31 +1,45 @@
 import 'package:whatsapp_clone/components/chat_card.dart';
+import 'package:whatsapp_clone/models/chat.dart';
 
 class Data {
   static List<ChatCard> cards = [
-    const ChatCard(
-      latestMessage: 'يخوي رد علينا',
-      name: 'فهد',
-      time: '10:00',
-      unreadMessagesCount: 1000,
+    ChatCard(
+      chat: Chat(
+        name: 'Fahad',
+        messages: [
+          Message(
+            isSender: true,
+            time: '10:00',
+            content: 'بدأ الكلاس',
+            isRead: true,
+          ),
+        ],
+      ),
     ),
-    const ChatCard(
-      latestMessage: 'يخوي رد علينا',
-      name: 'وليد',
-      time: '4:00',
-      unreadMessagesCount: 3,
-    ),
-    const ChatCard(
-      latestMessage: 'يخوي رد علينا',
-      name: 'فهد',
-      time: '10:00',
-      unreadMessagesCount: 1000,
-    ),
-    const ChatCard(
-      latestMessage: 'يخوي رد علينا',
-      name: 'فهد',
-      time: '10:00',
-      unreadMessagesCount: 1000,
-      showDivider: false,
+    ChatCard(
+      chat: Chat(
+        name: 'Omar',
+        messages: [
+          Message(
+            isSender: true,
+            time: '10:00',
+            content: 'بدأ الكلاس',
+            isRead: false,
+          ),
+          Message(
+            isSender: true,
+            time: '10:05',
+            content: 'وينك !',
+            isRead: false,
+          ),
+          Message(
+            isSender: true,
+            time: '10:10',
+            content: 'فهد قام يخصم',
+            isRead: false,
+          ),
+        ],
+      ),
     ),
   ];
 }

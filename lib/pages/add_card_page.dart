@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/components/chat_card.dart';
 import 'package:whatsapp_clone/constants/spaces.dart';
-import 'package:whatsapp_clone/data.dart';
 
 class AddCardPage extends StatefulWidget {
   const AddCardPage({super.key});
@@ -103,14 +101,11 @@ class _AddCardPageState extends State<AddCardPage> {
             kVSpace32,
             ElevatedButton(
               onPressed: () {
-                Data.cards.add(
-                  ChatCard(
-                    name: nameController.text,
-                    time: timeController.text,
-                    latestMessage: latestMessageController.text,
-                    unreadMessagesCount: int.parse(unreadMessagesCountController.text),
-                  ),
-                );
+                // Data.cards.add(
+                //   ChatCard(
+                // 	chat: Chat(name: nameCon, messages: messages),
+                //   ),
+                // );
               },
               child: const Text('Add'),
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:whatsapp_clone/pages/add_card_pages.dart';
+import 'package:whatsapp_clone/pages/add_card_page.dart';
 
 const blue = Color.fromARGB(255, 7, 85, 203);
 AppBar customAppBar(BuildContext context, {required Function() onPushDone}) {

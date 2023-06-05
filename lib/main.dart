@@ -42,10 +42,17 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body: SafeArea(
         bottom: false,
-        child: ListView(
-          children: [
-            ...Data.cards,
-          ],
+        child: ListView.separated(
+          itemCount: Data.cards.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Data.cards[index];
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return const Divider(
+              thickness: 2,
+              indent: 77,
+            );
+          },
         ),
       ),
     );
